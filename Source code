@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <div class="cube">
+    <div class="face front">Front</div>
+    <div class="face back">Back</div>
+    <div class="face left">Left</div>
+    <div class="face right">Right</div>
+    <div class="face top">Top</div>
+    <div class="face bottom">Bottom</div>
+  </div>
+</body>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.cube {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0) rotateY(0);
+  transition: transform 1.25s ease-in-out;
+}
+
+.cube:hover {
+  transform: rotateX(360deg) rotateY(360deg);
+}
+
+.face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(0,0,0,0.4));
+  border: 2px solid rgba(255,255,255,0.2);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+.front  { transform: rotateY(  0deg) translateZ(125px); background: linear-gradient(135deg, #ff6f61, #d32f2f); }
+.back   { transform: rotateY(180deg) translateZ(125px); background: linear-gradient(135deg, #4fc3f7, #0288d1); }
+.left   { transform: rotateY(-90deg) translateZ(125px); background: linear-gradient(135deg, #9ccc65, #689f38); }
+.right  { transform: rotateY( 90deg) translateZ(125px); background: linear-gradient(135deg, #ffeb3b, #fbc02d); }
+.top    { transform: rotateX( 90deg) translateZ(125px); background: linear-gradient(135deg, #673ab7, #512da8); }
+.bottom { transform: rotateX(-90deg) translateZ(125px); background: linear-gradient(135deg, #e91e63, #c2185b); }
+</style>
+</html>
